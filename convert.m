@@ -2,25 +2,25 @@ clear all;
 clc;
 close all;
 %%
-% P = 'C:\Users\jiayi\Desktop\yaleB\images\images';%替换成文件夹路径
-% D = dir(fullfile(P,'*.pgm'));
-% C = cell(size(D));
-% for k = 1:numel(D)
-%     C{k,1} = imread(fullfile(P,D(k).name));
-%     if D(k).name(13)=='+'
-%          C{k,2} = str2double(D(k).name(14:16));
-%     else
-%         C{k,2} = -str2double(D(k).name(14:16));
-%     end
-%     if D(k).name(18)=='+'
-%         C{k,3} = str2double(D(k).name(19:20));
-%     else
-%         C{k,3} = -str2double(D(k).name(19:20));
-%     end
-% end
-% for idx=1:64
-%     C{idx,1}=C{idx,1}-C{65,1};
-% end
+P = '.\images';%替换成文件夹路径
+D = dir(fullfile(P,'*.pgm'));
+C = cell(size(D));
+for k = 1:numel(D)
+    C{k,1} = imread(fullfile(P,D(k).name));
+    if D(k).name(13)=='+'
+         C{k,2} = str2double(D(k).name(14:16));
+    else
+        C{k,2} = -str2double(D(k).name(14:16));
+    end
+    if D(k).name(18)=='+'
+        C{k,3} = str2double(D(k).name(19:20));
+    else
+        C{k,3} = -str2double(D(k).name(19:20));
+    end
+end
+for idx=1:64
+    C{idx,1}=C{idx,1}-C{65,1};
+end
 
 load('C.mat');
 %%
