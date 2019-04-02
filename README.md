@@ -1,0 +1,1 @@
+# photometric-with-known-lighting
